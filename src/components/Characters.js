@@ -1,8 +1,16 @@
 import Character from "./Character";
 import PropTypes from "prop-types";
 const Characters = ({ characters }) => {
+  console.log(characters?.length);
   return (
     //La primera sentencia es para chequear que los datos hayan llegado
+    //?. optional chaining operator ES 2020
+    //const user = {name: "Marcelo"}
+    //const zip = user.adress.zip
+    //clg zip //breaks... cannot read prop of undefined
+    //const zip = user?.adress?.zip //
+    //clg zip //undefined... doesn't break
+
     <>
       {characters?.length &&
         characters.map((character) => (
