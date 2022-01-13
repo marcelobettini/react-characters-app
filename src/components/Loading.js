@@ -8,7 +8,7 @@ const override = {
 
 const Loading = () => (
   <div className="d-flex flex-end" style={{ height: "100vh" }}>
-    <PuffLoader color="black" css={override} size={125} />
+    <PuffLoader css={override} size={125} />
   </div>
 );
 

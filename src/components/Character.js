@@ -1,25 +1,23 @@
 //importamos PropTypes para documentar el componente, recordamos que sin
 //esto funciona igual... pero es mejor documentar
 import PropTypes from "prop-types";
-import { Col, Card, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 //Como envié en Characters el objeto character desestructurado, recibo
 //las props que me interesan solamente
 const Character = ({ id, name, image, status, species, gender }) => {
   return (
-    <Col className="d-flex justify-content-center text-center">
-      <Card className="p-2 my-2" style={{ width: "18rem" }}>
-        <Card.Img src={image} alt={name} />
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-    </Col>
+    <Card className="p-2 my-2" style={{ width: "18rem" }}>
+      <Card.Img src={image} alt={name} />
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
   );
 };
 

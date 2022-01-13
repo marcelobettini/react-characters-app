@@ -11,6 +11,7 @@ export const useFetch = (endpoint) => {
 
   const getData = useCallback(async () => {
     try {
+      setLoading(true);
       const { data } = await API.get(endpoint);
       setData(data);
       setTimeout(() => {
