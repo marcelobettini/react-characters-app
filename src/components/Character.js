@@ -13,15 +13,17 @@ const Character = ({ name, image, status, species, gender, created }) => {
     >
       <Card.Title>{name}</Card.Title>
       <div className="img-container">
-        <Card.Img className="char-img" variant="top" src={image} alt={name} />
+        <Card.Img variant="top" src={image} alt={name} />
       </div>
       <Card.Body className="body">
         <Card.Text>Status: {status}</Card.Text>
         <Card.Text>Species: {species}</Card.Text>
         <Card.Text>Gender: {gender}</Card.Text>
         <Card.Text>Created: {created}</Card.Text>
+<div className="btn-container">
 
         <Button variant="primary" className="btn">Go somewhere</Button>
+        </div>
       </Card.Body>
     </Card>
   );
