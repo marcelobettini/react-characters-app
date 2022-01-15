@@ -1,40 +1,45 @@
-//importamos PropTypes para documentar el componente, recordamos que sin
-//esto funciona igual... pero es mejor documentar
 import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
+import "./Character.css";
 
-//Como envié en Characters el objeto character desestructurado, recibo
+//como enviamos desde Characters el objero character desestructurado, recibo
 //las props que me interesan solamente
-const Character = ({ id, name, image, status, species, gender }) => {
+
+const Character = ({ name, image, status, species, gender, created }) => {
   return (
-    <Card className="p-2 my-2" style={{ width: "18rem" }}>
-      <Card.Img src={image} alt={name} />
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+    <Card
+      className="card p-2 my-2 shadow text-center"
+      style={{ width: "18rem" }}
+    >
+      <Card.Title>{name}</Card.Title>
+      <div className="img-container">
+        <Card.Img className="char-img" variant="top" src={image} alt={name} />
+      </div>
+      <Card.Body className="body">
+        <Card.Text>Status: {status}</Card.Text>
+        <Card.Text>Species: {species}</Card.Text>
+        <Card.Text>Gender: {gender}</Card.Text>
+        <Card.Text>Created: {created}</Card.Text>
+
+        <Button variant="primary" className="btn">Go somewhere</Button>
       </Card.Body>
     </Card>
   );
 };
 
 /*--------
-Prop Types
-----------*/
-//Esta es la versión para holgazanes
-/* Characters.propTypes = {
-    characters: PropTypes.instanceOf(Array)
-} */
-
-//Esto es super detallado.
+PropTypes
+---------*/
+/* versión holgazana
+Character.propTypes = {
+    character: PropTypes.instanceOf(Array)
+}
+*/
 Character.propTypes = {
   character: PropTypes.shape({
     created: PropTypes.string,
     gender: PropTypes.string,
-    id: PropTypes.number,
+    name: PropTypes.string,
     species: PropTypes.string,
     status: PropTypes.string,
   }),
