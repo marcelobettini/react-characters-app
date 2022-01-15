@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
+import Status from "./Status";
 import "./Character.css";
 
 //como enviamos desde Characters el objero character desestructurado, recibo
 //las props que me interesan solamente
 
-const Character = ({ name, image, status, species, gender, created }) => {
+const Character = ({ name, image, status, species, gender}) => {
   return (
     <Card
       className="card p-2 my-2 shadow text-center"
@@ -16,10 +17,9 @@ const Character = ({ name, image, status, species, gender, created }) => {
         <Card.Img variant="top" src={image} alt={name} />
       </div>
       <Card.Body className="body">
-        <Card.Text>Status: {status}</Card.Text>
+        <Status status={status}/>
         <Card.Text>Species: {species}</Card.Text>
         <Card.Text>Gender: {gender}</Card.Text>
-        <Card.Text>Created: {created}</Card.Text>
 <div className="btn-container">
 
         <Button variant="primary" className="btn">Go somewhere</Button>

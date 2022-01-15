@@ -28,7 +28,6 @@ export default Characters;
 Characters.propTypes = {
   characters: PropTypes.arrayOf(
     PropTypes.shape({
-      created: PropTypes.string,
       gender: PropTypes.string,
       id: PropTypes.number,
       name: PropTypes.string,
