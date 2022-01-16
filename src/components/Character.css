@@ -1,0 +1,15 @@
+.card:hover img{
+  transform: rotateY(.5turn);
+}
+.img-container:hover img{
+  transform: scale(1.3);
+}
+
+img {
+  transition-duration: 500ms;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+}
+.img-container {
+  overflow: hidden;
+}

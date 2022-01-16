@@ -11,7 +11,8 @@ import Search from "./components/Search";
 import Pages from "./components/Pages"
 function App() {
   const [endpoint, setEndpoint] = useState("character");
-  const [data, loading, error] = useFetch(endpoint);
+  // const [data, loading, error] = useFetch(endpoint);esto era vector sin reducers
+  const {data, loading, error} = useFetch(endpoint); //ahora state es objeto
   const { results: characters, info } = data;
   // recibe desde Search un character y actualiza el endpoint con esa info
   //cuando se actualiza endpoint se dispara el custom hook que hace el fetch
