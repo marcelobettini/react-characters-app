@@ -14,9 +14,8 @@ export const useFetch = (endpoint) => {
       setLoading(true);
       const { data } = await API.get(endpoint);
       setData(data);
-      setTimeout(() => {
-        setLoading(false);
-      }, 3000);
+      setLoading(false);
+      
     } catch (error) {
       console.error(error);
       setError(true);
