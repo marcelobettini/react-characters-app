@@ -7,7 +7,7 @@ import {
   Row,
   Col,
   Form,
-  InputGroup,
+  FormGroup,
   FormControl,
 } from "react-bootstrap";
 
@@ -22,20 +22,22 @@ const Search = ({ findCharacter, loading }) => {
 
   return (
     <Container>
-      <Row className="justify-content-center my-4">
+      <Row className="justify-content-center my-4 text-center">
         <Col xs={9} md={7} lg={5}>
           <Form onSubmit={getCharacters}>
-            <InputGroup>
+            <FormGroup>
+              <Form.Label htmlFor="search">Search characters... &lt;Enter&gt; fetch all</Form.Label>
               <FormControl
-                placeholder="Buscar personaje... <Enter> sin texto busca todos"
+                
                 onChange={(e) => setCharacter(e.target.value)}
                 value={character}
                 name={character}
+                id="search"
               />
               {/* con value y name hacemos que el input sea controlado por el estado.
 
 */}
-            </InputGroup>
+            </FormGroup>
           </Form>
         </Col>
       </Row>
