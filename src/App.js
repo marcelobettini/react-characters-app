@@ -8,7 +8,8 @@ import Characters from "./components/Characters";
 import Loading from "./components/Loading";
 import "./App.css";
 import Search from "./components/Search";
-import Pages from "./components/Pages"
+import Pages from "./components/Pages";
+import Filter from "./components/Filter";
 function App() {
   const [endpoint, setEndpoint] = useState("character");
   // const [data, loading, error] = useFetch(endpoint);esto era vector sin reducers
@@ -30,12 +31,12 @@ function App() {
       setEndpoint(data.info.prev)
     } 
   }
-  console.log(loading);
   if (loading) return <Loading />;
   if (error) return <h3>Oh snaps! There was an error 😫</h3>;
   return ( 
     <>
       <Search findCharacter={findCharacter} loading={loading} />
+      <Filter setEndpoint={setEndpoint}/>
       <Characters characters={characters} />
       <Pages prevPage={prevPage} nextPage={nextPage} before={data.info.prev} after={data.info.next}/>
     </>

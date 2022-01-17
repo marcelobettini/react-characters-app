@@ -7,5 +7,5 @@ import axios from "axios";
 //una AxiosInstance. Este es nuestro Singleton...
 
 export const API = axios.create({
-  baseURL: "https://rickandmortyapi.com/api",
+  baseURL: "https://rickandmortyapi.com/api/",
 });
