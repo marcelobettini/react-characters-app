@@ -3,7 +3,8 @@ import { Container, Row, Col, Form } from 'react-bootstrap'
 
 function Filter({ setEndpoint }) {
     function handleFilter(status) {
-        setEndpoint("character/?status=" + status.toLowerCase())
+        status === "All" ? setEndpoint("character") :
+            setEndpoint("character/?status=" + status.toLowerCase())
     }
     return (
         <Container>
@@ -17,6 +18,7 @@ function Filter({ setEndpoint }) {
                                 <option>Alive</option>
                                 <option>Dead</option>
                                 <option>Unknown</option>
+                                <option>All</option>
                             </Form.Select>
                         </Form.Group>
                     </Form>
