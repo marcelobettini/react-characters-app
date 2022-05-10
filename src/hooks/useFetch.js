@@ -1,7 +1,7 @@
 //esto no es un componente en sentido estricto sino una función
 //recuerde que el componente es una función que retorna
 //algún elemento...
-import { useEffect, useState, useCallback, useReducer } from "react";
+import { useEffect, useCallback, useReducer } from "react";
 import { ACTIONS } from "../actions/fetch";
 import { API } from "../API";
 import { fetchReducer, initialState } from "../reducers/fetch";
@@ -19,16 +19,16 @@ export const useFetch = (endpoint) => {
       // setLoading(true);
       const { data } = await API.get(endpoint);
       //dispatch es un método que nos va a permitir actualizar el reducer mediante
-  //acciones, no tengo que recordar setters... O sea, tengo un setter global.
-  //¿cómo se usa?
-      dispatch({type: ACTIONS.SET_DATA, payload: data})
+      //acciones, no tengo que recordar setters... O sea, tengo un setter global.
+      //¿cómo se usa?
+      dispatch({ type: ACTIONS.SET_DATA, payload: data })
       /* setData(data);
       setLoading(false); */
-      
+
     } catch (error) {
       console.error(error)
       // setError(true);
-      dispatch({type: ACTIONS.SET_ERROR})
+      dispatch({ type: ACTIONS.SET_ERROR })
     }
   }, [endpoint]);
 
